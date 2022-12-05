@@ -12,11 +12,6 @@ SESSION_CONFIGS = [
         doc=""
     ),
 ]
-# randomize_groups is a boolean variable that can be re-set to True on the Session Config UI
-# randomize_groups allows for group randomization between players while keeping their set role, unless randomize_role is also set to True.
-# randomize_role is a boolean variable that can be re-set to True on the Session Config UI
-# randomize_role allows for role randomization between players while keeping their groups fixed, unless randomize_groups is also set to False.
-
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
