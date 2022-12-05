@@ -6,7 +6,8 @@ otree - Variation of the Trust game with randomization and sliders.
   - Randomization for groups was done.
   - Randomization for roles was done.
   - The optional bonus of making both randomization features session configurable was also done.
-  - 
+  
+  
 ### Frontend:
   - The display of results in a table per round was done.
   - The implementation of the slider for choosing the amount sent from Player A was done.
