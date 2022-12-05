@@ -16,6 +16,11 @@ along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+/*
+Elmo's Comment: I managed to find this javascript baseline code in order to implement
+the slider choice for the players during the trust_tech_task game, here is the link of the gitlab repo: https://gitlab.com/gr0ssmann/otree_slider
+*/
+
 var mgsliders = Array();
 
 mgsliders.lookup = function (which) {
