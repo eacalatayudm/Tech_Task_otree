@@ -41,12 +41,22 @@ class Player(BasePlayer):
 
 # FUNCTIONS
 def creating_session(subsession: Subsession):
+    
+    #If randomize_groups and randomize_role are both set to True, all the players will be randomly
+    #assigned a group and a role every round.
+    
     if subsession.session.config['randomize_groups'] and subsession.session.config['randomize_role']:
         subsession.group_randomly()
-
+        
+    #If randomize_groups is set to True but randomize_role is set to False, all the players will be randomly
+    #assigned a group while keeping their pre-set role from round 1.
+    
     elif subsession.session.config['randomize_groups']:
         subsession.group_randomly(fixed_id_in_group=True)
-
+    
+    #If randomize_role is set to True but randomize_groups is set to False, all the players will be randomly
+    #assigned a role while being in the same group as the one they were in round 1.
+    
     elif subsession.session.config['randomize_role']:
         for g in subsession.get_groups():
             players = g.get_players()
