@@ -22,4 +22,5 @@ otree - Variation of the Trust game with randomization and sliders.
   - The database can be visualized properly, locally exceuted using DB Browser for SQLite:
   ![screenshottask2randomsession](https://user-images.githubusercontent.com/119822097/205537221-62e98996-51b9-4d6f-8d30-df2b73020c31.png)
   - Session was launched succesfully in production mode:
+  
   ![screenshottask2prodmode](https://user-images.githubusercontent.com/119822097/205537472-8e701ea1-2cae-49df-b694-134eb8b283b9.png)
