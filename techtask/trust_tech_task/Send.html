@@ -1,0 +1,56 @@
+{{ block title }}Your Choice{{ endblock }}
+{{ block content }}
+
+    <p>
+    You are Participant A. Now you have {{C.ENDOWMENT}}. How much will you send to participant B?
+    </p>
+    <style>
+        .mgslider-wrapper {
+            border-spacing: 10px;
+        }
+        .mgslider-limit {
+            width: 10%;
+            min-width: 75px;
+            height: 40px;
+            margin: 100px;
+            text-align: center;
+            background: #eee;
+            border: 1px solid #888;
+        }
+        .mgslider-limit, .mgslider-value {
+            font-variant-numeric: tabular-nums;
+        }
+        .mgslider-before {
+            height: 16px;
+            width: 100%;
+            background: #1e5bff;
+        }
+        .mgslider-feedback {
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+    {{ formfield_errors 'sent_amount' }}
+    <p>Click the blue bars to reveal the sliders.</p>
+
+    <div id="sliders_here"></div>
+
+    <script src="{{ static 'mgslider.js' }}"></script>
+
+    <script>
+        $(document).ready(function (event) {
+            slider1 = new mgslider("sent_amount", 0, 100, 1);
+            slider1.print(document.getElementById("sliders_here"));
+        });
+    </script>
+
+
+    <p>
+    {{ next_button }}
+    </p>
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+{{ endblock }}

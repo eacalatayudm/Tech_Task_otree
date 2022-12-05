@@ -1,0 +1,79 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    {{ if player.id_in_group == 1 }}
+        <p>
+            You chose to send participant B {{ group.sent_amount }}.
+            Participant B returned {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            You were initially endowed with {{ C.ENDOWMENT }},
+            chose to send {{ group.sent_amount }},
+            received {{ group.sent_back_amount }}
+            thus you now have:
+            {{ C.ENDOWMENT }}-{{ group.sent_amount }}+{{ group.sent_back_amount }}=<strong>{{ player.payoff }}</strong>
+        </p>
+        <table class='table table-bordered text-center'>
+            <thead>
+                <tr>
+                    <th colspan="2"> This Round's Results:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <b>Round</b> </td>
+                    <td> {{ group.round_number }} </td>
+                </tr>
+                <tr>
+                    <td> <b>Your Payoff</b> </td>
+                    <td> {{ player.payoff }} </td>
+                </tr>
+                {{ for other in others }}
+                <tr>
+                    <td> <b>Your Partner's Payoff</b></td>
+                    <td> {{ other.payoff }}</td>
+                </tr>
+                {{ endfor }}
+            </tbody>
+        </table>
+    {{ else }}
+        <p>
+            Participant A sent you {{ group.sent_amount }}.
+            They were tripled so you received {{ tripled_amount }}.
+            You chose to return {{ group.sent_back_amount }}.
+        </p>
+        <p>
+            You received {{ tripled_amount }},
+            chose to return {{ group.sent_back_amount }}
+            thus you now have:
+            ({{ tripled_amount }})-({{ group.sent_back_amount }})=<strong>{{ player.payoff }}</strong>
+        </p>
+        <table class='table table-bordered text-center'>
+            <thead>
+                <tr>
+                    <th colspan="2"> This Round's Results:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <b>Round</b> </td>
+                    <td> {{ group.round_number }} </td>
+                </tr>
+                <tr>
+                    <td> <b>Your Payoff</b> </td>
+                    <td> {{ player.payoff }} </td>
+                </tr>
+                {{ for other in others }}
+                <tr>
+                    <td> <b>Your Partner's Payoff</b></td>
+                    <td>{{ other.payoff }}</td>
+                </tr>
+                {{ endfor }}
+        </table>
+    {{ endif }}
+
+    <p>{{ next_button }}</p>
+
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+
+{{ endblock }}
